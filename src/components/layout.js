@@ -38,8 +38,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Container>
 
           <Header siteTitle={data.site.siteMetadata.title} />
