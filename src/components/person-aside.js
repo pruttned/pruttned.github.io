@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Photo from './photo';
 import { FacebookIcon, LinkedinIcon, GithubIcon } from './icon';
 import { useStaticQuery, graphql } from 'gatsby';
+import { SecLink } from './link';
 
 const photoSize = 140;
 const iconSize = 40;
@@ -63,9 +64,15 @@ const PersonAside = () => {
                 {site.siteMetadata.authorShortDescription}
             </Description>
             <Social>
-                <FacebookIcon size={iconSize} />
-                <GithubIcon size={iconSize} />
-                <LinkedinIcon size={iconSize} />
+                <SecLink>
+                    <FacebookIcon size={iconSize} />
+                </SecLink>
+                <SecLink>
+                    <GithubIcon size={iconSize} />
+                </SecLink>
+                <SecLink>
+                    <LinkedinIcon size={iconSize} />
+                </SecLink>
             </Social>
         </Container>
     )

@@ -3,6 +3,7 @@ export default {
     backgroundColor: 'white',
     bodyBackgroundColor: '#F6F6F6',
     invBackgroundColor: '#2E3131',
+    secLinkColor: '#A2B4C0',
     gutterSize: 20,
 
 

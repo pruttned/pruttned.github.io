@@ -6,13 +6,14 @@ import logoIcon from '../assets/logo.svg';
 import styled from 'styled-components';
 
 const Svg = styled.svg`
+    fill: currentColor;
     width: ${props => props.size || 32}px;
     height: ${props => props.size || 32}px;
 `;
 
-const Icon = (id) => ({ size }) => {
+const Icon = (id) => ({ size, className }) => {
     return (
-        <Svg size={size}>
+        <Svg size={size} className={className}>
             <use xlinkHref={`#${id}`} />
         </Svg>
     );
