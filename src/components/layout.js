@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 
+import PersonAside from './person-aside';
 import Header from './header';
 import GlobalStyle from './global-style'
 import './layout.css'
@@ -48,6 +49,7 @@ const Layout = ({ children }) => {
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>
+        <PersonAside></PersonAside>
 
       </Container>
     </>
