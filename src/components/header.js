@@ -2,10 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import theme from '../theme';
 
 const StyledHeader = styled.header`
-  background: ${theme.accent}
+  background: ${props => props.theme.accent}
 `;
 
 const Header = ({ siteTitle }) => (

@@ -8,11 +8,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 
 import PersonAside from './person-aside';
 import Header from './header';
 import GlobalStyle from './global-style'
+import theme from '../theme';
 import './layout.css'
 
 const Layout = ({ children }) => {
@@ -38,20 +39,22 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <Container>
+      <ThemeProvider theme={theme}>
+        <Container>
 
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div>
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <div>
+            <main>{children}</main>
+            <footer>
+              © {new Date().getFullYear()}, Built with
           {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
-        </div>
-        <PersonAside></PersonAside>
+              <a href="https://www.gatsbyjs.org">Gatsby</a>
+            </footer>
+          </div>
+          <PersonAside></PersonAside>
 
-      </Container>
+        </Container>
+      </ThemeProvider >
     </>
   )
 }

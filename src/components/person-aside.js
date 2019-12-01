@@ -2,25 +2,24 @@ import * as React from 'react';
 import styled from 'styled-components';
 import Photo from './photo';
 import { FacebookIcon, LinkedinIcon, GithubIcon } from './icon';
-import theme from '../theme';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const photoSize = 140;
 const iconSize = 40;
 
 const Container = styled.aside`
-    background: ${theme.backgroundColor};
+    background: ${props => props.theme.backgroundColor};
     text-align: center;
     max-width: 300px;
     position: relative;
-    padding: ${photoSize / 2 + 10 + theme.gutterSize}px 20px 20px 20px;
+    padding: ${props => photoSize / 2 + 10 + props.theme.gutterSize}px 20px 20px 20px;
 `;
 
 const PhotoContainer = styled.div`
     position:absolute;    
-    top: -${photoSize / 2 + theme.gutterSize}px;
-    left: calc(50% - ${photoSize / 2 + theme.gutterSize}px);
-    border: solid ${theme.gutterSize}px ${theme.bodyBackgroundColor};
+    top: -${props => photoSize / 2 + props.theme.gutterSize}px;
+    left: calc(50% - ${props => photoSize / 2 + props.theme.gutterSize}px);
+    border: solid ${props => props.theme.gutterSize}px ${props => props.theme.bodyBackgroundColor};
     border-radius: 50%; 
     overflow:hidden;
 `;
