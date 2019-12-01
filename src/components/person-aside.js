@@ -3,11 +3,12 @@ import styled from 'styled-components';
 import Photo from './photo';
 import { FacebookIcon, LinkedinIcon, GithubIcon } from './icon';
 import theme from '../theme';
+import { useStaticQuery, graphql } from 'gatsby';
 
 const photoSize = 140;
 const iconSize = 40;
 
-const Container = styled.div`
+const Container = styled.aside`
     background: ${theme.backgroundColor};
     text-align: center;
     max-width: 300px;
@@ -38,23 +39,37 @@ const Social = styled.div`
     justify-content: center;
 `;
 
-const PersonAside = () => (
-    <Container>
-        <PhotoContainer>
-            <Photo size={photoSize} />
-        </PhotoContainer>
-        <Name>Peter Ruttkay-Nedecký</Name>
-        <Description>
-            I`m developer that develops things and so on
-    asdasd
-    adasdasdasdasd
-        </Description>
-        <Social>
-            <FacebookIcon size={iconSize} />
-            <GithubIcon size={iconSize} />
-            <LinkedinIcon size={iconSize} />
-        </Social>
-    </Container>
-);
+
+const PersonAside = () => {
+    const { site } = useStaticQuery(
+        graphql`
+          query {
+            site {
+              siteMetadata {
+                author
+                authorShortDescription
+              }
+            }
+          }
+        `
+    );
+
+    return (
+        <Container>
+            <PhotoContainer>
+                <Photo size={photoSize} />
+            </PhotoContainer>
+            <Name>{site.siteMetadata.author}</Name>
+            <Description>
+                {site.siteMetadata.authorShortDescription}
+            </Description>
+            <Social>
+                <FacebookIcon size={iconSize} />
+                <GithubIcon size={iconSize} />
+                <LinkedinIcon size={iconSize} />
+            </Social>
+        </Container>
+    )
+};
 
 export default PersonAside;
