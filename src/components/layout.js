@@ -9,12 +9,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled, { ThemeProvider } from "styled-components"
+import { Reset } from 'styled-reset'
 
 import PersonAside from './person-aside';
 import Header from './header';
 import GlobalStyle from './global-style'
 import theme from '../theme';
-import './layout.css'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -32,13 +32,11 @@ const Layout = ({ children }) => {
   
    height: 100vh;
   `;
-  // grid: auto-flow / 200px 1fr;
-
-
-
+ 
   return (
     <>
       <ThemeProvider theme={theme}>
+        <Reset />
         <GlobalStyle />
         <Container>
 
