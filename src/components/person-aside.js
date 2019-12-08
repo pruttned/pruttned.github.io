@@ -14,6 +14,7 @@ const Container = styled.aside`
     max-width: 300px;
     position: relative;
     padding: ${props => photoSize / 2 + 10 + props.theme.gutterSize}px 20px 20px 20px;
+    border-bottom: ${props => props.theme.bottomBorder} ;
 `;
 
 const PhotoContainer = styled.div`
