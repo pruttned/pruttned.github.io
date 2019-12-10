@@ -5,13 +5,13 @@ import Container from './container';
 const Root = styled.nav`
 `;
 
-const Header = () => {
+const TopMenu = () => {
     const themeContext = React.useContext(ThemeContext);
     return (
-        <Container background={themeContext.color.primary}>
-            header
+        <Container background={themeContext.color.background}>
+            top menu
         </Container>
     );
 };
 
-export default Header;
+export default TopMenu;

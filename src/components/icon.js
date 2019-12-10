@@ -7,8 +7,8 @@ import styled from 'styled-components';
 
 const Svg = styled.svg`
     fill: currentColor;
-    width: ${props => props.size || 32}px;
-    height: ${props => props.size || 32}px;
+    width: ${p => p.size || 32}px;
+    height: ${p => p.size || 32}px;
 `;
 
 const Icon = (id) => ({ size, className }) => {

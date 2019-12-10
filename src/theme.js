@@ -1,12 +1,19 @@
-
-const primaryColor = '#329BEB';
+const color = {
+    primary: '#329BEB',
+    text: '#535B60',
+    bodyBackground: '#F6F6F6',
+    invBackground: '#2E3131',
+    secLink: '#A2B4C0',
+    background: 'white',
+    invBackgroundText: '#535B60',
+};
 
 export default {
-    primaryColor,
-    backgroundColor: 'white',
-    bodyBackgroundColor: '#F6F6F6',
-    invBackgroundColor: '#2E3131',
-    secLinkColor: '#A2B4C0',
-    gutterSize: 20,
-    bottomBorder: `solid 5px ${primaryColor}`,
+    color,
+    grid: {
+        gutter: 20
+    },
+    card: {
+        bottomBorder: `solid 5px ${color.primary}`,
+    }
 };

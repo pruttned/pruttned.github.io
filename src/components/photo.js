@@ -3,9 +3,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import styled from 'styled-components';
 
-const ImgContainer = styled.div`
-  width: ${props => props.size || 50}px;
-  height: ${props => props.size || 50}px;
+const Root = styled.div`
+  width: ${p => p.size || 50}px;
+  height: ${p => p.size || 50}px;
 `;
 
 const Photo = ({ size }) => {
@@ -22,9 +22,9 @@ const Photo = ({ size }) => {
   `)
 
   return (
-    <ImgContainer size={size}>
+    <Root size={size}>
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-    </ImgContainer>
+    </Root>
   )
 }
 

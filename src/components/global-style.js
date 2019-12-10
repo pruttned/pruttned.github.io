@@ -3,8 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     body {
-        background: ${props => props.theme.bodyBackgroundColor};
+        background: ${p => p.theme.color.bodyBackground};
         font-family: 'Roboto', sans-serif;
+        color: ${p => p.theme.color.text}
     }
 `;
 

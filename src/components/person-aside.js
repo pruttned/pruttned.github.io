@@ -8,20 +8,20 @@ import { SecLink } from './link';
 const photoSize = 140;
 const iconSize = 40;
 
-const Container = styled.aside`
-    background: ${props => props.theme.backgroundColor};
+const Root = styled.aside`
+    background: ${p => p.theme.color.background};
     text-align: center;
     max-width: 300px;
     position: relative;
-    padding: ${props => photoSize / 2 + 10 + props.theme.gutterSize}px 20px 20px 20px;
-    border-bottom: ${props => props.theme.bottomBorder} ;
+    padding: ${p => photoSize / 2 + 10 + p.theme.grid.gutter}px 20px 20px 20px;
+    border-bottom: ${p => p.theme.card.bottomBorder} ;
 `;
 
 const PhotoContainer = styled.div`
     position:absolute;    
-    top: -${props => photoSize / 2 + props.theme.gutterSize}px;
-    left: calc(50% - ${props => photoSize / 2 + props.theme.gutterSize}px);
-    border: solid ${props => props.theme.gutterSize}px ${props => props.theme.bodyBackgroundColor};
+    top: -${p => photoSize / 2 + p.theme.grid.gutter}px;
+    left: calc(50% - ${p => photoSize / 2 + p.theme.grid.gutter}px);
+    border: solid ${p => p.theme.grid.gutter}px ${props => props.theme.color.bodyBackground};
     border-radius: 50%; 
     overflow:hidden;
 `;
@@ -56,7 +56,7 @@ const PersonAside = () => {
     );
 
     return (
-        <Container>
+        <Root>
             <PhotoContainer>
                 <Photo size={photoSize} />
             </PhotoContainer>
@@ -75,7 +75,7 @@ const PersonAside = () => {
                     <LinkedinIcon size={iconSize} />
                 </SecLink>
             </Social>
-        </Container>
+        </Root>
     )
 };
 
