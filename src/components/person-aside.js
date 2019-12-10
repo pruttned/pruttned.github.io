@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Photo from './photo';
 import { FacebookIcon, LinkedinIcon, GithubIcon } from './icon';
 import { useStaticQuery, graphql } from 'gatsby';
-import { SecLink } from './link';
+import Link from './link';
 
 const photoSize = 140;
 const iconSize = 40;
@@ -38,6 +38,7 @@ const Social = styled.div`
     grid-template-columns: repeat(3, auto);
     column-gap: 20px;
     justify-content: center;
+    color: ${p => p.theme.color.secLink}
 `;
 
 
@@ -65,15 +66,15 @@ const PersonAside = () => {
                 {site.siteMetadata.authorShortDescription}
             </Description>
             <Social>
-                <SecLink>
+                <Link>
                     <FacebookIcon size={iconSize} />
-                </SecLink>
-                <SecLink>
+                </Link>
+                <Link>
                     <GithubIcon size={iconSize} />
-                </SecLink>
-                <SecLink>
+                </Link>
+                <Link>
                     <LinkedinIcon size={iconSize} />
-                </SecLink>
+                </Link>
             </Social>
         </Root>
     )
