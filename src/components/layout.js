@@ -18,7 +18,7 @@ import PersonAside from './person-aside';
 import Footer from './footer';
 import TopMenu from './top-menu';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -43,8 +43,8 @@ const Layout = ({ children }) => {
       <Reset />
       <GlobalStyle />
       <Root>
-        <TopMenu siteTitle={data.site.siteMetadata.title} />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <TopMenu />
+        <Header title={title} />
         <Content>
           {children}
         </Content>

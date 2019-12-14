@@ -5,7 +5,8 @@ const color = {
     invBackground: '#2E3131',
     secLink: '#A2B4C0',
     background: 'white',
-    invBackgroundText: '#535B60',
+    invTextLight: '#535B60',
+    invText: 'white'
 };
 
 export default {

@@ -10,7 +10,7 @@ const iconSize = 24;
 const Root = styled.aside`
     display: grid;
     grid-template-columns: repeat(4, auto);
-    color: ${p => p.theme.color.invBackgroundText};
+    color: ${p => p.theme.color.invTextLight};
     padding: 10px 0;
     text-align: center;
     justify-content: center;
