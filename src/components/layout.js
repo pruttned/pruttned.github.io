@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider, ThemeContext } from 'styled-components'
-import { Reset } from 'styled-reset'
 
 import theme from '../theme';
 import GlobalStyle from './global-style'
@@ -37,7 +36,6 @@ const Layout = ({ children, title, isArticle }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Reset />
       <GlobalStyle />
       <Root>
         <TopMenu />
