@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import Container from '../components/container';
 import theme from '../theme';
 import styled from 'styled-components';
+import Img from 'gatsby-image'
 
 const Content = styled.div`
 `;
@@ -12,13 +13,15 @@ const Content = styled.div`
 export default function Template({
   data, // injected by pageQuery
 }) {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+  const { markdownRemark } = data;
+  const { frontmatter, html } = markdownRemark;
+  let featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid;
 
   return (
     <Layout title={frontmatter.title} isArticle="true" >
       <SEO title={frontmatter.title} />
       <Container background={theme.color.background}>
+        <Img fluid={featuredImgFluid} />
         <Content
           dangerouslySetInnerHTML={{ __html: html }}
         />
@@ -35,6 +38,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
