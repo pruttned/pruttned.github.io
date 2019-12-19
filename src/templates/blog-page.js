@@ -14,14 +14,16 @@ export default function Template({
   data, // injected by pageQuery
 }) {
   const { markdownRemark } = data;
-  const { frontmatter, html } = markdownRemark;
+  const { frontmatter, html, timeToRead } = markdownRemark;
   let featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid;
 
   return (
     <Layout title={frontmatter.title} isArticle="true" >
       <SEO title={frontmatter.title} />
-      <Container background={theme.color.background}>
+      <Container background={theme.color.background} narrow>
         <Img fluid={featuredImgFluid} />
+        <div>{timeToRead}mins</div>
+        <div>{frontmatter.date}</div>
         <Content
           dangerouslySetInnerHTML={{ __html: html }}
         />
@@ -34,6 +36,7 @@ export const pageQuery = graphql`
   query($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      timeToRead
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path
