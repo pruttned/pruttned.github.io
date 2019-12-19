@@ -1,11 +1,7 @@
 import * as React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import styled, { ThemeContext } from 'styled-components';
-import Container from './container';
-import { FacebookIcon, LinkedinIcon, GithubIcon } from './icon';
-import Link from './link';
+import styled from 'styled-components';
 import Img from 'gatsby-image'
-
+import ButtonLink from './button-link';
 
 const Root = styled.article`
     display:grid;
@@ -15,8 +11,9 @@ const Root = styled.article`
       ". heading heading ." max-content
       ". excerpt excerpt ." max-content
       ". btn date ." max-content
-      / 10px 1fr 1fr 10px; 
+      / 10px max-content 1fr 10px; 
     background: ${p => p.theme.color.background};
+    padding-bottom: 10px;
 `;
 
 const FeaturedImage = styled(Img)`
@@ -35,16 +32,21 @@ const Excerpt = styled.div`
 const Date = styled.div`
     grid-area: date;
     justify-self: right;
+    align-self: end;
+`;
+const ReadMoreBtn = styled(ButtonLink)`
+    grid-area: btn;
+    align-self: end;
 `;
 
-const ArticleCard = ({ title, excerpt, date, featuredImageFluid }) => {
-    const themeContext = React.useContext(ThemeContext);
+const ArticleCard = ({ title, excerpt, date, featuredImageFluid, path }) => {
     return (
         <Root>
             <FeaturedImage fluid={featuredImageFluid}></FeaturedImage>
             <Heading>{title}</Heading>
             <Excerpt>{excerpt}</Excerpt>
             <Date>{date}</Date>
+            <ReadMoreBtn to={path}>Continue reading</ReadMoreBtn>
         </Root>
     );
 }
