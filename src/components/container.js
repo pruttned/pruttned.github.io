@@ -4,16 +4,18 @@ import styled from 'styled-components';
 const Root = styled.div`
     display: grid;
     background: ${p => p.background || 'none'};
-    grid-template-columns: minmax(20px, auto) minmax(0px, ${p => p.narrow ? `680px` : `1200px`}) minmax(20px, auto);
+    grid-template-columns: auto [content-start] minmax(0px, ${p => p.narrow ? `680px` : `1200px`}) [content-end] auto;
 `;
 
 const Content = styled.div`
-    grid-column: 2;
+    grid-column: content-start / content-end ;
+    padding: 0 ${p => p.noPadding ? '0' : `${p.theme.grid.gutter}px`};
+    background: ${p => p.background || 'none'};
 `;
-const Container = ({ children, background, narrow = false }) => {
+const Container = ({ children, background, contentBackground, narrow = false, noPadding = false }) => {
     return (
         <Root background={background} narrow={narrow}>
-            <Content>
+            <Content background={contentBackground} noPadding={noPadding}>
                 {children}
             </Content>
         </Root>

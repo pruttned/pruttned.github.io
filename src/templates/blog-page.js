@@ -10,6 +10,11 @@ import Img from 'gatsby-image'
 const Content = styled.div`
 `;
 
+const FeaturedImage = styled(Img)`
+    overflow:hidden;
+    max-height: 300px;
+`;
+
 export default function Template({
   data, // injected by pageQuery
 }) {
@@ -20,8 +25,10 @@ export default function Template({
   return (
     <Layout title={frontmatter.title} isArticle="true" >
       <SEO title={frontmatter.title} />
-      <Container background={theme.color.background} narrow>
-        <Img fluid={featuredImgFluid} />
+      <Container narrow noPadding >
+        <FeaturedImage fluid={featuredImgFluid} />
+      </Container>
+      <Container narrow contentBackground="white">
         <div>{timeToRead}mins</div>
         <div>{frontmatter.date}</div>
         <Content

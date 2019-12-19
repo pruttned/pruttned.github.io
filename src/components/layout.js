@@ -27,7 +27,9 @@ const Layout = ({ children, title, isArticle }) => {
    min-height: 100vh;
   `;
 
-  const Content = styled.div``
+  const Content = styled.div`
+    padding: ${p => p.theme.grid.gutter}px 0;
+  `
 
   const Main = (isArticle ? styled.article : styled.div)`
     display: contents;
