@@ -36,7 +36,7 @@ const TopMenu = () => {
         <Link to="/">{site.siteMetadata.title}</Link>
         <Menu>
           <Link to="/">home</Link>
-          <Link to="/">about me</Link>
+          <Link to="/about-me">about me</Link>
         </Menu>
       </Root>
     </Container>

@@ -28,7 +28,7 @@ export default function Template({
       <Container narrow noPadding >
         <FeaturedImage fluid={featuredImgFluid} />
       </Container>
-      <Container narrow contentBackground="white">
+      <Container narrow bottomBorder contentBackground="white">
         <div>{timeToRead}mins</div>
         <div>{frontmatter.date}</div>
         <Content

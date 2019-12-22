@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ArticleCardList from "../components/article-card-list"
+import PersonAside from "../components/person-aside"
 
 export default function IndexPage({ data }) {
 
@@ -15,10 +16,10 @@ export default function IndexPage({ data }) {
     featuredImageFluid: e.node.frontmatter.featuredImage.childImageSharp.fluid,
   }));
 
-  console.log(items);
   return (
     <Layout>
       <SEO title="Home" />
+      <PersonAside></PersonAside>
       <ArticleCardList items={items}></ArticleCardList>
     </Layout>
   )

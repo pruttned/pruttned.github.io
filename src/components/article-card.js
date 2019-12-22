@@ -14,6 +14,7 @@ const Root = styled.article`
       / 10px max-content 1fr 10px; 
     background: ${p => p.theme.color.background};
     padding-bottom: 10px;
+    border-bottom: ${p => p.theme.card.bottomBorder} ;
 `;
 
 const FeaturedImage = styled(Img)`
