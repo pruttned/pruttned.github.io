@@ -24,8 +24,6 @@ const Layout = ({ children, title, isArticle }) => {
    display: grid;
    grid-template-rows: max-content 1fr max-content;
    min-height: 100vh;
-   height: 100%;
-   overflow: auto;
   `;
 
   const Content = styled.div`
