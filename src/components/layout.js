@@ -6,9 +6,8 @@ import styled, { ThemeProvider, ThemeContext } from 'styled-components'
 import theme from '../theme';
 import GlobalStyle from './global-style'
 import Header from './header';
-import PersonAside from './person-aside';
 import Footer from './footer';
-import TopMenu from './top-menu';
+import MainNav from './main-nav';
 
 const Layout = ({ children, title, isArticle }) => {
   const data = useStaticQuery(graphql`
@@ -23,8 +22,10 @@ const Layout = ({ children, title, isArticle }) => {
 
   const Root = styled.div`
    display: grid;
-   grid-template-rows: auto auto 1fr auto;
+   grid-template-rows: max-content 1fr max-content;
    min-height: 100vh;
+   height: 100%;
+   overflow: auto;
   `;
 
   const Content = styled.div`
@@ -32,7 +33,6 @@ const Layout = ({ children, title, isArticle }) => {
   `
 
   const Main = (isArticle ? styled.article : styled.div)`
-    display: contents;
   `;
 
 
@@ -40,7 +40,7 @@ const Layout = ({ children, title, isArticle }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Root>
-        <TopMenu />
+        <MainNav />
         <Main>
           <Header title={title} />
           <Content>
