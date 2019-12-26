@@ -5,6 +5,7 @@ import media from "styled-media-query";
 import { Collapse } from 'react-collapse'
 import Container from './container';
 import Link from './link';
+import MenuButton from './menu-button';
 
 const Root = styled.nav`
     display: grid;
@@ -12,12 +13,13 @@ const Root = styled.nav`
       "logo burger" max-content
       "menu menu" max-content
       / max-content auto;
-
-    padding: 10px 0;
+    align-items: center;
+    padding: ${p => p.theme.grid.gutter}px 0;
     ${media.greaterThan('medium')`
       grid: 
         "logo menu" max-content
         / max-content auto;
+      padding: 10px 0;
     `}
 `;
 
@@ -50,12 +52,9 @@ const MobMenu = styled.div`
     }
 `;
 
-const BurgerBtn = styled.div`
+const MenuButtonStyled = styled(MenuButton)`
   grid-area: burger;
   justify-self: right;
-  background :red;
-  width: 30px;
-  height: 30px;
   ${media.greaterThan('medium')`
       display: none;
   `}
@@ -67,6 +66,7 @@ const MenuLinks = () => (
     <Link to="/about-me">about me</Link>
   </>
 )
+
 
 const MainNav = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -88,7 +88,7 @@ const MainNav = () => {
       <Container background={themeContext.color.background}>
         <Root>
           <Logo to="/">{site.siteMetadata.title}</Logo>
-          <BurgerBtn onClick={() => setIsMenuOpen(!isMenuOpen)} ></BurgerBtn>
+          <MenuButtonStyled onClick={() => setIsMenuOpen(!isMenuOpen)} isOpen={isMenuOpen} ></MenuButtonStyled>
           <MobMenu >
             <Collapse isOpened={isMenuOpen}>
               <MenuLinks />
@@ -99,7 +99,7 @@ const MainNav = () => {
           </Menu>
         </Root>
       </Container>
-    </div>
+    </div >
   );
 };
 
