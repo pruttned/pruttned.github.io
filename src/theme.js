@@ -6,7 +6,8 @@ const color = {
     secLink: '#A2B4C0',
     background: 'white',
     invTextLight: '#535B60',
-    invText: 'white'
+    invText: 'white',
+    separator: '#e4e4e4'
 };
 
 export default {

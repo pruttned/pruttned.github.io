@@ -14,7 +14,8 @@ const Root = styled.nav`
       "menu menu" max-content
       / max-content auto;
     align-items: center;
-    padding: ${p => p.theme.grid.gutter}px 0;
+    padding: ${p => p.theme.grid.gutter}px 0 0 0;
+    row-gap: ${p => p.theme.grid.gutter}px;
     ${media.greaterThan('medium')`
       grid: 
         "logo menu" max-content
@@ -38,6 +39,8 @@ const Menu = styled.div`
       display: grid;
     `}
 `;
+
+//${Link}:first-of-type - link is a
 const MobMenu = styled.div`
     grid-area: menu;
 
@@ -49,6 +52,12 @@ const MobMenu = styled.div`
     }
     .ReactCollapse--collapse {
       transition: height 500ms;
+    }
+    ${Link}:first-of-type{
+      border-top: solid 1px ${p => p.theme.color.separator};
+    }
+    ${Link} {
+      padding: 5px 0;
     }
 `;
 
@@ -89,7 +98,7 @@ const MainNav = () => {
         <Root>
           <Logo to="/">{site.siteMetadata.title}</Logo>
           <MenuButtonStyled onClick={() => setIsMenuOpen(!isMenuOpen)} isOpen={isMenuOpen} size="25"></MenuButtonStyled>
-          <MobMenu >
+          <MobMenu>
             <Collapse isOpened={isMenuOpen}>
               <MenuLinks />
             </Collapse>
