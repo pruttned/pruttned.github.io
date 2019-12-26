@@ -12,7 +12,7 @@ const color = {
 export default {
     color,
     grid: {
-        gutter: 20
+        gutter: 14
     },
     card: {
         bottomBorder: `solid 5px ${color.primary}`,
