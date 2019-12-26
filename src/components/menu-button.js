@@ -16,6 +16,7 @@ const Root = styled.div`
     width: ${p => p.size}px;
     height: ${p => p.size}px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     &::before,
     &::after {
         display: block;
