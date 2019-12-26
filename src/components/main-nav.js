@@ -62,7 +62,7 @@ const MenuButtonStyled = styled(MenuButton)`
 
 const MenuLinks = () => (
   <>
-    <Link to="/">home</Link>
+    <Link to="/">blog</Link>
     <Link to="/about-me">about me</Link>
   </>
 )
