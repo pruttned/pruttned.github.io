@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Root = styled.div`
     display: grid;
     background: ${p => p.background || 'none'};
-    grid-template-columns: auto [content-start] minmax(0px, ${p => p.narrow ? `680px` : `1200px`}) [content-end] auto;
+    grid-template-columns: auto [content-start] minmax(0px, ${p => p.narrow ? `680px` : `1000px`}) [content-end] auto;
 `;
 
 const Content = styled.div`

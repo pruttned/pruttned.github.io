@@ -7,7 +7,6 @@ import Link from './link';
 import PersonCard from './person-card';
 
 const Root = styled.aside`
-    max-width: 300px;
     text-align: center;
     border-bottom: ${p => p.theme.card.bottomBorder} ;
 `;
