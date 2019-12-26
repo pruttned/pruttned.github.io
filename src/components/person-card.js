@@ -11,7 +11,7 @@ const photoTopOffset = photoSize * 1 / 3;
 const Root = styled.div`
     background: ${p => p.theme.color.background};
     position: relative;
-    padding: ${p => photoSize - photoTopOffset + 10 + p.theme.grid.gutter}px ${p => p.theme.grid.gutter}px ${p => p.theme.grid.gutter}px ${p => p.theme.grid.gutter}px;
+    padding: ${p => photoSize - photoTopOffset + 10 + p.theme.grid.gutter}px 0 ${p => p.theme.grid.gutter}px 0;
 `;
 
 //background - to prevent leaking of overlapped element between image and border
