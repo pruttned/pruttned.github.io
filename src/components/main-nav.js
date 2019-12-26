@@ -88,7 +88,7 @@ const MainNav = () => {
       <Container background={themeContext.color.background}>
         <Root>
           <Logo to="/">{site.siteMetadata.title}</Logo>
-          <MenuButtonStyled onClick={() => setIsMenuOpen(!isMenuOpen)} isOpen={isMenuOpen} ></MenuButtonStyled>
+          <MenuButtonStyled onClick={() => setIsMenuOpen(!isMenuOpen)} isOpen={isMenuOpen} size="25"></MenuButtonStyled>
           <MobMenu >
             <Collapse isOpened={isMenuOpen}>
               <MenuLinks />

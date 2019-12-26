@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 const Inner = styled.div`
     position: absolute;
-    background: ${p => p.theme.color.primary};
+    background: currentColor;
     top: ${p => p.size / 5 * 2}px;
     height: ${p => p.size / 5}px;
     left: 0;
@@ -20,7 +20,7 @@ const Root = styled.div`
     &::after {
         display: block;
         position: absolute;
-        background: ${p => p.theme.color.primary};
+        background: currentColor;
         height: ${p => p.size / 5}px;
         left: 0;
         width: 100%;
@@ -49,6 +49,9 @@ const Root = styled.div`
             transform: rotate(-45deg);
         }
     `}
+    &:hover, &:focus, &:active {
+        color: ${p => p.theme.color.primary};
+    }
 `;
 
 
