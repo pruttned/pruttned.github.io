@@ -5,6 +5,7 @@ import { Link as GLink } from 'gatsby';
 const Link = styled(GLink)`
     cursor: pointer;
     text-decoration: none;
+    transition: color 0.2s ease;
     &, &:visited{
         color: currentColor;
     }
