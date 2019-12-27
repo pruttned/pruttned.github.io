@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: `nede.dev_`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Dev blog of Peter Ruttkay-Nedecký`,
     author: `Peter Ruttkay-Nedecký`,
-    authorShortDescription: `I'm developer that develops things and so on
-    asdasd
-    adasdasdasdasd  
-    `
+    authorShortDescription: 'I`m a freelance full stack software engineer and technology lead.' , 
+    twitter: 'https://twitter.com/PNedecky',  
+    linkedIn: 'https://www.linkedin.com/in/peter-ruttkay-nedeck%C3%BD-69296bb3/',  
+    github: 'https://github.com/pruttned',
   },
   plugins: [
     `gatsby-plugin-styled-components`,

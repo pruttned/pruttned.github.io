@@ -2,8 +2,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components';
 import Photo from './photo';
-import { TwitterIcon, LinkedinIcon, GithubIcon } from './icon';
-import Link from './link';
+import SocialLinks from './social-links';
 
 const photoSize = 60;
 const iconSize = 24;
@@ -73,15 +72,7 @@ const WrittenByCard = () => {
                 {authorShortDescription}
             </Desc>
             <Social>
-                <Link>
-                    <TwitterIcon size={iconSize} />
-                </Link>
-                <Link>
-                    <GithubIcon size={iconSize} />
-                </Link>
-                <Link>
-                    <LinkedinIcon size={iconSize} />
-                </Link>
+                <SocialLinks iconSize={iconSize}></SocialLinks>
             </Social>
         </Root>
     )
