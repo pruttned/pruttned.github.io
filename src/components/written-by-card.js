@@ -16,7 +16,7 @@ const Root = styled.aside`
         "photo name" min-content 
         "photo desc" min-content 
         "photo social" min-content
-        / 60px max-content;
+        / 60px auto;
     padding: ${p => p.theme.grid.gutter}px 0;
 `;
 
