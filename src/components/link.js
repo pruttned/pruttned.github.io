@@ -8,9 +8,11 @@ const Link = styled(GLink)`
     transition: color 0.2s ease;
     &, &:visited{
         color: currentColor;
+        text-decoration: none;
     }
     &:hover, &:focus, &:active {
         color: ${p => p.theme.color.primary};
+        text-decoration: none;
     }
 `;
 
