@@ -6,13 +6,23 @@ import Container from '../components/container';
 import theme from '../theme';
 import styled from 'styled-components';
 import Img from 'gatsby-image'
+import ExtLink from '../components/ext-link';
 
 const Content = styled.div`
+  margin-top: 10px;
 `;
 
-const FeaturedImage = styled(Img)`
-    overflow:hidden;
-    max-height: 300px;
+const FeaturedImage = styled.figure`
+    margin: 0;
+`;
+
+const Header = styled.div`
+  display: grid;
+  justify-content: left;
+  grid-auto-flow: column;
+  column-gap: 10px;
+  font-size: 0.7em;
+  margin-top: 30px;
 `;
 
 export default function Template({
@@ -20,17 +30,26 @@ export default function Template({
 }) {
   const { markdownRemark } = data;
   const { frontmatter, html, timeToRead } = markdownRemark;
-  let featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid;
+  const featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid;
+  const { featuredImageBy, featuredImageByUrl, featuredImageSite, featuredImageSiteUrl } = frontmatter;
 
   return (
     <Layout title={frontmatter.title} isArticle="true" >
       <SEO title={frontmatter.title} />
-      <Container narrow noPadding >
-        <FeaturedImage fluid={featuredImgFluid} />
-      </Container>
+      <FeaturedImage>
+        <Container narrow noPadding >
+          <Img fluid={featuredImgFluid} />
+        </Container>
+        <Container narrow contentBackground="white">
+          <figcaption>Photo by <ExtLink href={featuredImageByUrl}>{featuredImageBy}</ExtLink> on <ExtLink href={featuredImageSiteUrl}>{featuredImageSite}</ExtLink></figcaption>
+        </Container>
+      </FeaturedImage>
       <Container narrow bottomBorder contentBackground="white">
-        <div>{timeToRead}mins</div>
-        <div>{frontmatter.date}</div>
+        <Header>
+          <span>{frontmatter.date}</span>
+          <span>|</span>
+          <span>{timeToRead} mins read</span>
+        </Header>
         <Content
           dangerouslySetInnerHTML={{ __html: html }}
         />
@@ -55,6 +74,10 @@ export const pageQuery = graphql`
             }
           }
         }
+        featuredImageBy
+        featuredImageByUrl
+        featuredImageSite
+        featuredImageSiteUrl
       }
     }
   }

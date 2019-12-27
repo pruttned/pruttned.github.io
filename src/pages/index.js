@@ -60,8 +60,8 @@ export const pageQuery = graphql`
           node {
             excerpt,
             frontmatter {
-              path,
-              title,
+              path
+              title
               date(formatString: "MMMM DD, YYYY")
               featuredImage {
                 childImageSharp {

@@ -7,7 +7,7 @@ const Root = styled.article`
     display:grid;
     row-gap: 15px;
     grid: 
-      "img img img img" 100px
+      "img img img img" 200px
       ". heading heading ." max-content
       ". excerpt excerpt ." max-content
       ". btn date ." max-content

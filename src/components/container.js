@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-
 const Root = styled.div`
     display: grid;
     background: ${p => p.background || 'none'};
