@@ -3,7 +3,7 @@ import styled, { ThemeContext } from 'styled-components';
 import Container from './container';
 import { LogoIcon } from './icon';
 
-const Root = styled.nav`
+const Root = styled.div`
     display:grid;
     justify-content: center;
     align-content: center;
@@ -24,14 +24,14 @@ const Header = ({ title }) => {
     return (
         <Container background={themeContext.color.primary}>
             <Root>
-                {title &&
-                    ((<H1>{title}</H1>) ||
+                {(title &&
+                    (<H1>{title}</H1>)) ||
                     (
                         <>
                             <LogoIcon size="52"></LogoIcon>
                             <div>My dev blog</div>
                         </>
-                    ))
+                    )
                 }
             </Root>
         </Container >
