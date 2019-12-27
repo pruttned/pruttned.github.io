@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeContext } from 'styled-components';
 import Container from './container';
-import { FacebookIcon, LinkedinIcon, GithubIcon } from './icon';
+import { TwitterIcon, LinkedinIcon, GithubIcon } from './icon';
 import Link from './link';
 
 const iconSize = 24;
@@ -37,7 +37,7 @@ const Footer = () => {
             <Root>
                 <div>© {site.siteMetadata.author} </div>
                 <Link>
-                    <FacebookIcon size={iconSize} />
+                    <TwitterIcon size={iconSize} />
                 </Link>
                 <Link>
                     <GithubIcon size={iconSize} />

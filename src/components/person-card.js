@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import Photo from './photo';
-import { FacebookIcon, LinkedinIcon, GithubIcon } from './icon';
+import { TwitterIcon, LinkedinIcon, GithubIcon } from './icon';
 import Link from './link';
 
 const photoSize = 140;
@@ -47,7 +47,7 @@ const PersonCard = ({ children }) => {
             </Content>
             <Social>
                 <Link>
-                    <FacebookIcon size={iconSize} />
+                    <TwitterIcon size={iconSize} />
                 </Link>
                 <Link>
                     <GithubIcon size={iconSize} />

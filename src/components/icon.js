@@ -1,5 +1,5 @@
 import React from 'react';
-import facebookIcon from '../assets/facebook.svg';
+import twitterIcon from '../assets/twitter.svg';
 import githubIcon from '../assets/github.svg';
 import linkedinIcon from '../assets/linkedin.svg';
 import logoIcon from '../assets/logo.svg';
@@ -19,7 +19,7 @@ const Icon = (id) => ({ size, className }) => {
     );
 };
 
-export const FacebookIcon = Icon(facebookIcon.id);
+export const TwitterIcon = Icon(twitterIcon.id);
 export const GithubIcon = Icon(githubIcon.id);
 export const LinkedinIcon = Icon(linkedinIcon.id);
 export const LogoIcon = Icon(logoIcon.id);

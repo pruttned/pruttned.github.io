@@ -1,9 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Photo from './photo';
-import { FacebookIcon, LinkedinIcon, GithubIcon } from './icon';
 import { useStaticQuery, graphql } from 'gatsby';
-import Link from './link';
 import PersonCard from './person-card';
 
 const Root = styled.aside`
