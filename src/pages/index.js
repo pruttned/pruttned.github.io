@@ -37,7 +37,7 @@ export default function IndexPage({ data }) {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Blog" />
       <Container noPadding>
         <Root>
           <PersonAsideWrap>
