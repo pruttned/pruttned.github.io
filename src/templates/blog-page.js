@@ -3,10 +3,10 @@ import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from '../components/container';
-import theme from '../theme';
 import styled from 'styled-components';
 import Img from 'gatsby-image'
 import ExtLink from '../components/ext-link';
+import WrittenByCard from '../components/written-by-card';
 
 const Content = styled.div`
   margin-top: 10px;
@@ -25,6 +25,9 @@ const Header = styled.div`
   margin-top: 30px;
 `;
 
+const WrittenByCardContainer = styled(Container)`
+  margin-top: ${p => p.theme.grid.gutter}px;
+`;
 export default function Template({
   data, // injected by pageQuery
 }) {
@@ -54,6 +57,9 @@ export default function Template({
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </Container>
+      <WrittenByCardContainer narrow bottomBorder contentBackground="white">
+        <WrittenByCard></WrittenByCard>
+      </WrittenByCardContainer>
     </Layout>
   )
 }

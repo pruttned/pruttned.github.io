@@ -12,9 +12,9 @@ const Content = styled.div`
     background: ${p => p.background || 'none'};
     border-bottom: ${p => p.bottomBorder ? p.theme.card.bottomBorder : 'none'} ;
 `;
-const Container = ({ children, background, contentBackground, narrow = false, noPadding = false, bottomBorder = false }) => {
+const Container = ({ children, background, contentBackground, narrow = false, noPadding = false, bottomBorder = false, className }) => {
     return (
-        <Root background={background} narrow={narrow}>
+        <Root background={background} narrow={narrow} className={className}>
             <Content background={contentBackground} noPadding={noPadding} bottomBorder={bottomBorder}>
                 {children}
             </Content>

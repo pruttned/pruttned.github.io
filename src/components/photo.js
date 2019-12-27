@@ -8,7 +8,7 @@ const Root = styled.div`
   height: ${p => p.size || 50}px;
 `;
 
-const Photo = ({ size }) => {
+const Photo = ({ size, className }) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "photo.jpg" }) {
@@ -22,7 +22,7 @@ const Photo = ({ size }) => {
   `)
 
   return (
-    <Root size={size}>
+    <Root size={size} className={className}>
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />
     </Root>
   )
