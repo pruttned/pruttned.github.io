@@ -10,7 +10,7 @@ export default function AboutMePage() {
   return (
     <Layout title="About me" isArticle="true" >
       <SEO title="About me" />
-      <Container narrow bottomBorder contentBackground="white">
+      <Container narrow bottomBorder contentBackground="white" shadow>
         <PersonCard>
           <div>
             <p>

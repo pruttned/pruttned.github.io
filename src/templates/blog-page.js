@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Img from 'gatsby-image'
 import ExtLink from '../components/ext-link';
 import WrittenByCard from '../components/written-by-card';
+import FullContainerRow from '../components/full-container-row';
 
 const Content = styled.div`
   margin-top: 10px;
@@ -39,15 +40,17 @@ export default function Template({
   return (
     <Layout title={frontmatter.title} isArticle="true" >
       <SEO title={frontmatter.title} />
-      <FeaturedImage>
-        <Container narrow noPadding >
-          <Img fluid={featuredImgFluid} />
-        </Container>
-        <Container narrow contentBackground="white">
-          <figcaption>Photo by <ExtLink href={featuredImageByUrl}>{featuredImageBy}</ExtLink> on <ExtLink href={featuredImageSiteUrl}>{featuredImageSite}</ExtLink></figcaption>
-        </Container>
-      </FeaturedImage>
-      <Container narrow bottomBorder contentBackground="white">
+      <Container narrow bottomBorder contentBackground="white" shadow>
+        <FullContainerRow>
+          <FeaturedImage>
+            <div>
+              <Img fluid={featuredImgFluid} />
+            </div>
+            <div>
+              <figcaption>Photo by <ExtLink href={featuredImageByUrl}>{featuredImageBy}</ExtLink> on <ExtLink href={featuredImageSiteUrl}>{featuredImageSite}</ExtLink></figcaption>
+            </div>
+          </FeaturedImage>
+        </FullContainerRow>
         <Header>
           <span>{frontmatter.date}</span>
           <span>|</span>
@@ -57,7 +60,7 @@ export default function Template({
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </Container>
-      <WrittenByCardContainer narrow bottomBorder contentBackground="white">
+      <WrittenByCardContainer narrow bottomBorder contentBackground="white" shadow>
         <WrittenByCard></WrittenByCard>
       </WrittenByCardContainer>
     </Layout>

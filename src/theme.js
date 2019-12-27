@@ -17,5 +17,6 @@ export default {
     },
     card: {
         bottomBorder: `solid 5px ${color.primary}`,
+        boxShadow: '2px 2px 5px 0px rgba(0,0,0,0.1)',
     }
 };

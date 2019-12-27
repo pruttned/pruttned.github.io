@@ -6,6 +6,7 @@ import PersonCard from './person-card';
 const Root = styled.aside`
     text-align: center;
     border-bottom: ${p => p.theme.card.bottomBorder} ;
+    box-shadow: ${p => p.theme.card.boxShadow};
 `;
 
 const Name = styled.div`
