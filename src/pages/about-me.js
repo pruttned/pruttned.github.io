@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Container from "../components/container"
 import PersonCard from "../components/person-card"
+import ExtLink from "../components/ext-link"
 
 export default function AboutMePage() {
   return (
@@ -25,7 +26,7 @@ export default function AboutMePage() {
               My stack consist mostly of C#, Javascript, Typescript, Angular, React, ASP.Net, EntityFramework and  NodeJs.
         </p>
             <p>
-              In my leisure time, I`m also working with MonoGame and Unity to build a video game <a href="http://tendrilechoreceived.com/">Tendril: Echo Received</a>.
+              In my leisure time, I`m also working with MonoGame and Unity to build a video game <ExtLink href="http://tendrilechoreceived.com/" follow>Tendril: Echo Received</ExtLink>.
         </p>
             <p>
               Currently, I’m playing most of the time with Docker, styled-components, CSS  grid, and Gatsby.
