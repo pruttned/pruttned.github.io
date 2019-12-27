@@ -1,14 +1,15 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { Link as GLink } from 'gatsby';
+import { Link } from 'gatsby';
 import { rgba } from 'polished';
 
-const ButtonLink = styled(GLink)`
+const ButtonLink = styled(Link)`
     cursor: pointer;
     text-decoration: none;
     text-transform: uppercase;
     border: solid 1px ${p => p.theme.color.primary};
     padding: 5px 15px;
+    transition: background-color 0.2s ease;
     &, &:visited{
         color: ${p => p.theme.color.primary};
     }
