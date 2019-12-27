@@ -19,7 +19,7 @@ export default function AboutMePage() {
               I`m a freelance full stack software engineer and technology lead, currently doing projects mainly for Steinringer WEB and IT solutions.
         </p>
             <p>
-              I love to learn about new trends and technologies to expand my toolset, which I use to design new solutions and to refactor old ones. I`m always keen to teach others and to get into lengthy nerdy discussions.
+              I love to learn about new trends and technologies, which I can use to design new solutions and to refactor old ones. I`m always keen to teach others and to get into lengthy nerdy discussions.
         </p>
             <p>
               My stack consist mostly of C#, Javascript, Typescript, Angular, React, ASP.Net, EntityFramework and  NodeJs.
