@@ -63,6 +63,12 @@ module.exports = {
             target: '_blank',
             rel: 'nofollow noopener'
           }
+        },
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 680,
+          }
         }]
       }
     },

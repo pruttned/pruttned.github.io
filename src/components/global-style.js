@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     img, svg{
         vertical-align: middle;
     }
+    .gatsby-highlight{
+        margin-bottom: 1em;
+        font-size: 0.8em;
+    }
 `;
 
 export default GlobalStyle;
