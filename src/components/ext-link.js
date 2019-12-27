@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-const ExtLink = (props) => (
-    <a {...props} target="blank" rel={['noopener', !props.follow && 'nofollow'].filter(x => x).join(' ')}></a>
+const ExtLink = ({ href, children, follow }) => (
+    <a href={href} target="blank" rel={['noopener', !follow && 'nofollow'].filter(x => x).join(' ')}>{children}</a>
 );
 
 export default ExtLink;

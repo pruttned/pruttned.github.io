@@ -25,13 +25,13 @@ const Header = ({ title }) => {
         <Container background={themeContext.color.primary}>
             <Root>
                 {title &&
-                    (<H1>{title}</H1>) ||
+                    ((<H1>{title}</H1>) ||
                     (
                         <>
                             <LogoIcon size="52"></LogoIcon>
                             <div>My dev blog</div>
                         </>
-                    )
+                    ))
                 }
             </Root>
         </Container >

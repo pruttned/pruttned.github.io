@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
-import styled, { ThemeProvider, ThemeContext } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import theme from '../theme';
 import GlobalStyle from './global-style'
@@ -10,15 +9,6 @@ import Footer from './footer';
 import MainNav from './main-nav';
 
 const Layout = ({ children, title, isArticle }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   const Root = styled.div`
    display: grid;
