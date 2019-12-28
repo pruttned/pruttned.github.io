@@ -44,7 +44,7 @@ export default function Template({
         <FullContainerRow>
           <FeaturedImage>
             <div>
-              <Img fluid={featuredImgFluid} />
+              <Img fluid={featuredImgFluid} alt="featured"/>
             </div>
             <div>
               <figcaption>Photo by <ExtLink href={featuredImageByUrl}>{featuredImageBy}</ExtLink> on <ExtLink href={featuredImageSiteUrl}>{featuredImageSite}</ExtLink></figcaption>
