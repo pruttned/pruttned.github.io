@@ -36,6 +36,7 @@ const Date = styled.div`
     justify-self: right;
     align-self: end;
     font-size: 0.7em;
+    text-align: right;
 `;
 const ReadMoreBtn = styled(ButtonLink)`
     grid-area: btn;
