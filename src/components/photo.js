@@ -18,12 +18,17 @@ const Photo = ({ size, className }) => {
           }
         }
       }
+      site {
+        siteMetadata {
+          author
+        }
+      }
     }
   `)
 
   return (
     <Root size={size} className={className}>
-      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+      <Img fluid={data.placeholderImage.childImageSharp.fluid} alt={data.site.siteMetadata.author} />
     </Root>
   )
 }
