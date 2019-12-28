@@ -5,6 +5,7 @@ import ExtLink from './ext-link';
 import styled from 'styled-components';
 
 const Link = styled(ExtLink)`
+    transition: color 0.2s ease;
     &, &:visited{
         color: currentColor;
         text-decoration: none;
