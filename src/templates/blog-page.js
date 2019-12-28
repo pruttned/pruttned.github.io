@@ -35,16 +35,17 @@ export default function Template({
   const { markdownRemark } = data;
   const { frontmatter, html, timeToRead } = markdownRemark;
   const featuredImgFluid = frontmatter.featuredImage.childImageSharp.fluid;
+  const featuredImgFixed = frontmatter.featuredImage.childImageSharp.fixed;
   const { featuredImageBy, featuredImageByUrl, featuredImageSite, featuredImageSiteUrl } = frontmatter;
 
   return (
     <Layout title={frontmatter.title} isArticle="true" >
-      <SEO title={frontmatter.title} />
+      <SEO title={frontmatter.title} img={featuredImgFixed.src} />
       <Container narrow bottomBorder contentBackground="white" shadow>
         <FullContainerRow>
           <FeaturedImage>
             <div>
-              <Img fluid={featuredImgFluid} alt="featured"/>
+              <Img fluid={featuredImgFluid} alt="featured" />
             </div>
             <div>
               <figcaption>Photo by <ExtLink href={featuredImageByUrl}>{featuredImageBy}</ExtLink> on <ExtLink href={featuredImageSiteUrl}>{featuredImageSite}</ExtLink></figcaption>
@@ -80,6 +81,9 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
+            }
+            fixed(width: 800){
+                src
             }
           }
         }
