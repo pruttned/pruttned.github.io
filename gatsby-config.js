@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `nede.dev_`,
+    title: `nede.dev`,
     description: `Dev blog of Peter Ruttkay-Nedecký`,
     author: `Peter Ruttkay-Nedecký`,
     authorShortDescription: 'I`m a freelance full stack software engineer and technology lead.',
@@ -77,13 +77,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `nede.dev`,
+        short_name: `nede.dev`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#F6F6F6`,
+        theme_color: `#2E3131`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-svg-sprite',
