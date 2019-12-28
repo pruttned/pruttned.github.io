@@ -24,6 +24,8 @@ function SEO({ description, lang, meta, title, img }) {
       }
     `
   )
+  
+  const metaDescription = description || site.siteMetadata.description
 
   meta = [...[
     {
@@ -70,7 +72,6 @@ function SEO({ description, lang, meta, title, img }) {
     }]];
   }
 
-  const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
