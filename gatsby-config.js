@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    baseUrl: 'https://nede.dev',
     title: `nede.dev`,
     description: `Dev blog of Peter Ruttkay-Nedecký`,
     author: `Peter Ruttkay-Nedecký`,

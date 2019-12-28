@@ -16,6 +16,7 @@ function SEO({ description, lang, meta, title, img }) {
       query {
         site {
           siteMetadata {
+            baseUrl
             title
             description
             author
@@ -24,7 +25,7 @@ function SEO({ description, lang, meta, title, img }) {
       }
     `
   )
-  
+
   const metaDescription = description || site.siteMetadata.description
 
   meta = [...[
@@ -46,7 +47,7 @@ function SEO({ description, lang, meta, title, img }) {
     },
     {
       name: `twitter:card`,
-      content: `summary`,
+      content: `${img ? 'summary_large_image' : 'summary'}`,
     },
     {
       name: `twitter:creator`,
@@ -65,10 +66,10 @@ function SEO({ description, lang, meta, title, img }) {
   if (img) {
     meta = [...meta, ...[{
       property: `og:image`,
-      content: img,
+      content: site.siteMetadata.baseUrl + img,
     }, {
       name: `twitter:image`,
-      content: img,
+      content: site.siteMetadata.baseUrl + img,
     }]];
   }
 
