@@ -41,7 +41,7 @@ First, we need to decide how we are going to model our database. We will use fol
 
 This way, it is easy to collect all the entities stored in one collection, and it is also more readable for a human. We are going to use a non-bare repository, so we will be able to access files directly, which I consider to be a big advantage.
 
-Let\`s point out here an interesting article <https://www.kenneth-truyers.net/2016/10/13/git-nosql-database/> that is also dealing with the concept of using Git as a database, but instead is using bare repositories.
+Let\`s point out here an interesting article <https://www.kenneth-truyers.net/2016/10/13/git-nosql-database/> that is also dealing with the concept of using Git as a database, but it is using bare repositories.
 
 To speed up lookups, we are going to store document ID directly in the file name. This way, it is not necessary to open a file to get the ID. And it is again more readable for a human. It would also be possible to store more fields in the file name and thus make a sort of index.
 

@@ -29,7 +29,7 @@ export default function AboutMePage() {
               In my leisure time, I`m also working with MonoGame and Unity to build a video game <ExtLink href="http://tendrilechoreceived.com/" follow>Tendril: Echo Received</ExtLink>.
         </p>
             <p>
-              Currently, I’m playing most of the time with Docker, styled-components, CSS  grid, and Gatsby.
+              Currently, I’m playing with Docker, styled-components, CSS  grid, and Gatsby.
         </p>
 
           </div>
