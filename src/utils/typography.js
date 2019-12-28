@@ -24,16 +24,17 @@ const typography = new Typography({
             color: theme.color.primary,
             textDecoration: 'underline',
         },
-        figure: {
+        figcaption: {
             color: theme.color.secLink,
+            marginTop: '2px',
             textAlign: 'center',
-            fontSize: '0.7em',
+            fontSize: '0.6em',
         },
-        'figure a,figure a:visited': {
+        'figcaption a,figure a:visited': {
             color: 'currentColor',
             textDecoration: 'underline'
         },
-        'figure a:hover,figure a:active': {
+        'figcaption a:hover,figure a:active': {
             color: 'currentColor',
             textDecoration: 'underline'
         },
