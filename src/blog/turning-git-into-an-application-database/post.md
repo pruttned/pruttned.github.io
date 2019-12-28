@@ -2,7 +2,7 @@
 path: "/blog/turning-git-into-an-application-database"
 date: "2019-12-28"
 title: "Turning Git into an application database"
-featuredImage: featured.png
+featuredImage: featured.jpg
 featuredImageBy: "Brina Blum"
 featuredImageByUrl: "https://unsplash.com/@brina_blum?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"
 featuredImageSite: "Unsplash"
