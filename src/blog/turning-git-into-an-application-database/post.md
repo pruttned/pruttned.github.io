@@ -21,13 +21,13 @@ In the past, we discussed the possibilities of using file system along with Git 
 
 Let’s look at the benefits of using Git backed filesystem as an application database.
 
-  - History - Let\`s face it, managing history in common database is usually not fun. You\`ll end up with tables full of records where you must check dates just to get the currently active record. Or you must move records to historical tables. Either way, it is tedious. But with Git, you\`ll get history basically for free. You are even able to compare versions, and you also know who, when, and why did the change.
+  - History - Let’s face it, managing history in common database is usually not fun. You’ll end up with tables full of records where you must check dates just to get the currently active record. Or you must move records to historical tables. Either way, it is tedious. But with Git, you’ll get history basically for free. You are even able to compare versions, and you also know who, when, and why did the change.
 
   - Hosting for free – Today, you can create a private repo in Bitbucket and Github without any costs. Compared to ordinary database free hostings, there are no row constraints, no read/write constraints, and I consider both Github and Bitbucket reliable providers.
 
-  - Human readable data store - By storing data in plain text files, you can read and even edit data with your favorite text editor. Thanks to this, you can quickly hack some data, or rapidly prototype new features. E.g., you need to clone an old invoice, and you still had no time to implement this feature into your application? No problem, simply copy the file, open your favorite text editor, and you are done. It\`s much easier than in most database admin tools.
+  - Human readable data store - By storing data in plain text files, you can read and even edit data with your favorite text editor. Thanks to this, you can quickly hack some data, or rapidly prototype new features. E.g., you need to clone an old invoice, and you still had no time to implement this feature into your application? No problem, simply copy the file, open your favorite text editor, and you are done. It’s much easier than in most database admin tools.
 
-  - Distributed and disconnected database - Great thing about Git is its distributed nature. Each local repository contains the full history. If one of the repositories dies, it doesn't usually mean a loss of data. It is also possible to work in offline mode without any additional headaches.
+  - Distributed and disconnected database - Great thing about Git is its distributed nature. Each local repository contains the full history. If one of the repositories dies, it doesn’t usually mean a loss of data. It is also possible to work in offline mode without any additional headaches.
 
   - Merging of conflicts - When two users change the same entity, there must be a conflict resolution. That often means that either the later change wins or the first one. Git, on the other hand, gives users the ability to merge conflicts manually and in many cases, can merge changes automatically.
 
@@ -41,13 +41,13 @@ First, we need to decide how we are going to model our database. We will use fol
 
 This way, it is easy to collect all the entities stored in one collection, and it is also more readable for a human. We are going to use a non-bare repository, so we will be able to access files directly, which I consider to be a big advantage.
 
-Let\`s point out here an interesting article <https://www.kenneth-truyers.net/2016/10/13/git-nosql-database/> that is also dealing with the concept of using Git as a database, but it is using bare repositories.
+Let’s point out here an interesting article <https://www.kenneth-truyers.net/2016/10/13/git-nosql-database/> that is also dealing with the concept of using Git as a database, but it is using bare repositories.
 
 To speed up lookups, we are going to store document ID directly in the file name. This way, it is not necessary to open a file to get the ID. And it is again more readable for a human. It would also be possible to store more fields in the file name and thus make a sort of index.
 
 As a file format for document files, we will use YAML. YAML is great for serializing data while keeping them human-readable, so checking diffs in the Git history will be easier for us.
 
-## Let\`s have some performance
+## Let’s have some performance
 
 Ok, so now when we have our file structure, to have any sense of speed, we need caching. We are going to do caching on two levels. First, we will cache collection and then also individual documents.
 
@@ -126,7 +126,7 @@ function invalidateDocumentInCache(collection: string, id: string,
 
 In case of detecting a change to a YAML file, we remove it from the node-cache. If the file is removed, added, or renamed (add + unlink), then we also clear the whole collection in the collection cache.
 
-## Let\`s search
+## Let’s search
 
 Finally, we have everything prepared for doing an actual querying. We are going to do it on two levels. Query by ID and by content. We will use the [micromatch](https://www.npmjs.com/package/micromatch) library for querying by ID.
 
@@ -189,6 +189,6 @@ async function update(invoice: InvoiceUpdateModel): Promise<InvoiceDocument> {
 
 ## Conclusion
 
-I must say that I\`m happy with the result. For this specific use case, git works quite nice as a database for application data. Of course, the performance is much lower compared to common database solutions. The whole concept would also be far from ideal in case of an application hosted on a remote server because it would make dealing with conflicts much more difficult. But on the other hand, it is really simple, cheap and it gives us the ability to do quick hacking of documents.
+I must say that I’m happy with the result. For this specific use case, git works quite nice as a database for application data. Of course, the performance is much lower compared to common database solutions. The whole concept would also be far from ideal in case of an application hosted on a remote server because it would make dealing with conflicts much more difficult. But on the other hand, it is really simple, cheap and it gives us the ability to do quick hacking of documents.
 
 You can access the whole code of the invoicing application here <https://github.com/pruttned/owl-invoice>

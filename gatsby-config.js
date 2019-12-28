@@ -3,7 +3,7 @@ module.exports = {
     title: `nede.dev`,
     description: `Dev blog of Peter Ruttkay-Nedecký`,
     author: `Peter Ruttkay-Nedecký`,
-    authorShortDescription: 'I`m a freelance full stack software engineer and technology lead.',
+    authorShortDescription: 'I’m a freelance full stack software engineer and technology lead.',
     twitter: 'https://twitter.com/PNedecky',
     linkedIn: 'https://www.linkedin.com/in/peter-ruttkay-nedeck%C3%BD-69296bb3/',
     github: 'https://github.com/pruttned',
