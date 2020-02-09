@@ -60,11 +60,11 @@ for (int i = 0; i < 1000; i++)
 }
 ```
 
-We are creating an instance of our collection filled with numbers, and then we are computing the sum of them (yes without Linq ). We are doing this multiple times to simulate a game loop or a complex computation. How many allocations would you expect to be happening in this simple code? There is, of course, the obvious one, the allocation of the NonNegatvieCollection class. But it happens outside of the game loop. Let’s open a memory profiler to check if there are any other allocations.
+We are creating an instance of our collection filled with numbers, and then we are computing the sum of them (yes without Linq ). We are doing this multiple times to simulate a game loop or a complex computation. How many allocations would you expect to be happening in this simple code? There is, of course, the obvious one, the allocation of the NonNegativeCollection class. But it happens outside of the game loop. Let’s open a memory profiler to check if there are any other allocations.
 
 ![memory profiler](./image2.png)
 
-As you can see, apart from expected NonNegatvieCollection allocation, we have 1000 allocations from GetEnumerator method. One for each iteration in the game loop.
+As you can see, apart from expected NonNegativeCollection allocation, we have 1000 allocations from GetEnumerator method. One for each iteration in the game loop.
 
 We must be doing something wrong.
 
