@@ -16,6 +16,7 @@ const Root = styled.article`
     padding-bottom: 10px;
     border-bottom: ${p => p.theme.card.bottomBorder} ;
     box-shadow: ${p => p.theme.card.boxShadow};
+    margin-bottom: ${p => `${p.theme.grid.gutter}px`};
 `;
 
 const FeaturedImage = styled(Img)`
