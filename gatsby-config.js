@@ -104,6 +104,13 @@ module.exports = {
         omitGoogleFont: true // https://github.com/KyleAMathews/typography.js/issues/211
       },
     },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en',
+        prefix: "og: http://ogp.me/ns#"
+      }
+    }
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
