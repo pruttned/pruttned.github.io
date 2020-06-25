@@ -45,7 +45,8 @@ We need to change the root path of SPA static files in the Startup.cs file. We w
 ```js
 services.AddSpaStaticFiles(configuration =>
 {
-    configuration.RootPath = _env.IsDevelopment() ? "ClientApp/build" : "ClientApp/build/public";
+    configuration.RootPath = _env.IsDevelopment() ? "ClientApp/build" 
+      : "ClientApp/build/public";
 });
 ```
 
@@ -219,7 +220,8 @@ Great, we can see the rendered HTML of our React application. We are making some
 module.exports = {
     modify: (config, { target, dev }) => {
         if (target === 'node' && dev) {
-            config.plugins = config.plugins.filter(p => p.constructor.name !== 'HotModuleReplacementPlugin');
+            config.plugins = config.plugins.filter(p => 
+              p.constructor.name !== 'HotModuleReplacementPlugin');
             config.entry = config.entry.filter(e => e !== 'webpack/hot/poll?300');
         }
         return config;
@@ -270,13 +272,16 @@ public class RenderService : IRenderService
     private readonly INodeJSService _nodeJSService;
     private readonly string _serverJsPath;
 
-    public RenderService(INodeJSService nodeJSService, IWebHostEnvironment webHostEnvironment)
+    public RenderService(INodeJSService nodeJSService, 
+      IWebHostEnvironment webHostEnvironment)
     {
         _nodeJSService = nodeJSService;
-        _serverJsPath = webHostEnvironment.ContentRootFileProvider.GetFileInfo(ServerJsRelPath).PhysicalPath;
+        _serverJsPath = webHostEnvironment.ContentRootFileProvider
+          .GetFileInfo(ServerJsRelPath).PhysicalPath;
     }
     public Task<string> RenderAsync(string url) => 
-        _nodeJSService.InvokeFromFileAsync<string>(_serverJsPath, args: new object[] { url });
+        _nodeJSService.InvokeFromFileAsync<string>(_serverJsPath, 
+          args: new object[] { url });
 }
 ```
 
@@ -294,7 +299,8 @@ public class SsrResult : IActionResult
     }
     public async Task ExecuteResultAsync(ActionContext context)
     {
-        var renderService = context.HttpContext.RequestServices.GetRequiredService<IRenderService>();
+        var renderService = context.HttpContext.RequestServices
+          .GetRequiredService<IRenderService>();
         var renderResult = await renderService.RenderAsync(_url);
         var contentResult = new ContentResult
         {
@@ -333,7 +339,8 @@ We have only one small problem left. In development, Razzle serves scripts throu
 
 ```js
 if (dev) {
-    config.output.publicPath = config.output.publicPath.replace('http://', 'https://');
+    config.output.publicPath = config.output.publicPath
+      .replace('http://', 'https://');
     if (target === 'web') {
         config.devServer.https = true;
         config.devServer.pfx = process.env.RAZZLE_PFX;
