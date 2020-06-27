@@ -8,9 +8,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
+import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
 function SEO({ description, lang, meta, title, img }) {
+  const { pathname } = useLocation();
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -45,6 +47,10 @@ function SEO({ description, lang, meta, title, img }) {
       property: `og:type`,
       content: `website`,
     },
+    {
+      property: `og:url`,
+      content: `${site.siteMetadata.baseUrl}${pathname.replace(/\/$/, '')}`,
+    },    
     {
       name: `twitter:card`,
       content: `${img ? 'summary_large_image' : 'summary'}`,
