@@ -360,3 +360,5 @@ Alternatively, we could also just switch the ASP.NET Core backend to HTTP by rem
 We are going to wrap it here for now. We have successfully integrated Razzle with ASP.NET Core backend into a working application with server-side rendering while having HMR during development.
 
 Next time, we are going to add data loading, look into code splitting, and also tackle the problem of deploying our application.
+
+You can find the second part [here](https://nede.dev/blog/integrating-react-into-aspnet-core-using-razzle-with-all-the-goodies-like-ssr-routing-code-splitting-and-hmr-part-2)
