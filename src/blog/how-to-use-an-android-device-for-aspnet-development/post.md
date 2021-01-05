@@ -1,6 +1,6 @@
 ---
 path: "/blog/how-to-use-an-android-device-for-aspnet-development"
-date: "2021-01-04"
+date: "2021-01-05"
 title: "How to use an Android device for ASP.NET development"
 featuredImage: featured.png
 ---
