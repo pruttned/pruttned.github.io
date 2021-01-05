@@ -16,6 +16,9 @@ const typography = new Typography({
         h1: {
             marginBottom: 0
         },
+        'h2,h3,h4': {
+            marginBottom: '0.6rem',
+        },
         'a,a:visited': {
             color: theme.color.primary,
             textDecoration: 'none',
@@ -38,6 +41,9 @@ const typography = new Typography({
             color: 'currentColor',
             textDecoration: 'underline'
         },
+        li: {
+            marginBottom: '0.333rem'
+        }
     })
 })
 export default typography

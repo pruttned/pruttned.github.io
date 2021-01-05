@@ -11,6 +11,9 @@ import FullContainerRow from '../components/full-container-row';
 
 const Content = styled.div`
   margin-top: 10px;
+  pre[class*="language-"]{
+        margin: 0 0 1.666rem 0;    
+  }
 `;
 
 const FeaturedImage = styled.figure`
@@ -47,9 +50,9 @@ export default function Template({
             <div>
               <Img fluid={featuredImgFluid} alt="featured" />
             </div>
-            <div>
+            {featuredImageByUrl && <div>
               <figcaption>Photo by <ExtLink href={featuredImageByUrl}>{featuredImageBy}</ExtLink> on <ExtLink href={featuredImageSiteUrl}>{featuredImageSite}</ExtLink></figcaption>
-            </div>
+            </div>}
           </FeaturedImage>
         </FullContainerRow>
         <Header>
