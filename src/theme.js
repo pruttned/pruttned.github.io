@@ -7,7 +7,8 @@ const color = {
     background: 'white',
     invTextLight: '#535B60',
     invText: 'white',
-    separator: '#e4e4e4'
+    separator: '#e4e4e4',
+    blockquote: '#ccc'
 };
 
 export default {

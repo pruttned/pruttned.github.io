@@ -4,7 +4,7 @@ module.exports = {
     title: `nede.dev`,
     description: `Dev blog of Peter Ruttkay-Nedecký`,
     author: `Peter Ruttkay-Nedecký`,
-    authorShortDescription: 'I’m a freelance full stack software engineer and technology lead.',
+    authorShortDescription: 'I’m a passionate full-stack software engineer, technology lead, and architect.',
     twitter: 'https://twitter.com/PNedecky',
     linkedIn: 'https://www.linkedin.com/in/peter-ruttkay-nedeck%C3%BD-69296bb3/',
     github: 'https://github.com/pruttned',
@@ -73,8 +73,8 @@ module.exports = {
         }, {
           resolve: 'gatsby-remark-emojis',
           options: {
-            active : true,
-             // Add a custom css class
+            active: true,
+            // Add a custom css class
             class: 'emoji-icon',
             // Select the size (available size: 16, 24, 32, 64)
             size: 64,
@@ -85,6 +85,11 @@ module.exports = {
               position: 'relative',
               width: '21px'
             }
+          }
+        }, {
+          resolve: "gatsby-remark-stackblitz",
+          options: {
+            height: 600
           }
         }]
       }
