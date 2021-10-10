@@ -102,13 +102,11 @@ currentPath$ = this.router.events
 
 We will, in this case, display the message “failed to retrieve” instead of the old URL.
 
-## 
-
 ## Break the loop
 
 So far, so good, but we still have some caveats to explore.
 
-Let’s return to our first example with the simple “of” observable and apply the same fix.
+Let’s return to our first example with the simple of observable and apply the same fix.
 
 ```js
 of(1, 2, 3, 4, 5)
@@ -147,7 +145,9 @@ subject.next(4);
 subject.next(5);
 ```
 
-In this case, ‘3’ will be emitted again after the resubscribe in the catchError operator. The error in the tap operator will be therefore thrown again, resulting in an infinite loop. How could we skip the failing item? The first idea could be to simply skip the failing item when returning the new observable from the catchError.  
+In this case, ‘3’ will be emitted again after the resubscribe in the catchError operator. The error in the tap operator will be therefore thrown again, resulting in an infinite loop. 
+
+How can we skip the failing item? The first idea could be to simply skip the failing item when returning the new observable from the catchError.  
 Something like this.
 
 ```js
